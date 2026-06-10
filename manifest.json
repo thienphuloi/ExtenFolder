@@ -1,0 +1,35 @@
+{
+   "action": {
+      "default_icon": {
+         "128": "icons/icon128.png",
+         "16": "icons/icon16.png",
+         "48": "icons/icon48.png"
+      },
+      "default_title": "Tải Hóa Đơn điện tử"
+   },
+   "background": {
+      "service_worker": "background.js"
+   },
+   "content_scripts": [ {
+      "js": [ "content.js" ],
+      "matches": [ "https://hoadondientu.gdt.gov.vn/*" ],
+      "run_at": "document_idle"
+   } ],
+   "description": "Tự động tải hóa đơn điện tử từ cổng thuế GDT. Xuất XML, Excel, HTML, PDF. Tiết kiệm hàng giờ. Hoàn toàn miễn phí.",
+   "host_permissions": [ "https://hoadondientu.gdt.gov.vn/*" ],
+   "icons": {
+      "128": "icons/icon128.png",
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxu0F/G1HDUqmQhLthLCZ1mIvWB6AeYHcCCHu5boRFwEYeYXOCs5zbHRXW1/8LuF9zMCJ8GqCvlohp8bnArAc8E1/lD0J2rRfkU8YVVN/+QjBMwBn2C9+7rBqytJUmWlxFEjXSq8UVdY1qrRTB2wYvf3/M0JlAK1jcJhPcLH0YSax5dPPg8kRQR7xD7Pgz1mMm+1mZhgEgjA7YXfckCMluajVJasHCdyaufcwHt7Vl4iDjumpyKOEUqzcfxq2oyWg7l7ft+2JlWPBq/6AGJZ4TYX99kpq5i6yjLEg5PXDjx6POCXt+R+/xdEQq7UGaM6SPHHwcZdm66OtyHzcuEVtCwIDAQAB",
+   "manifest_version": 3,
+   "name": "Tải Hóa Đơn Điện Tử - Nguyễn Bá Lợi",
+   "permissions": [ "scripting", "downloads", "storage", "unlimitedStorage", "offscreen", "activeTab" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.3.1",
+   "web_accessible_resources": [ {
+      "matches": [ "https://hoadondientu.gdt.gov.vn/*" ],
+      "resources": [ "lib/jszip.min.js", "lib/xlsx.full.min.js", "icons/*.png", "template/qr-ungho.jpg" ]
+   } ]
+}
